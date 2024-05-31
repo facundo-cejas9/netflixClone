@@ -1,0 +1,51 @@
+/* Estilos para pantallas grandes */
+.player {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; /* Añadido para evitar que el contenido se pegue a los bordes */
+}
+
+.player img {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+
+
+.player iframe {
+    border-radius: 10px;
+    max-width: 100%; /* Asegura que el video no exceda el ancho de su contenedor */
+    width: 90%; /* Hace que el iframe ocupe todo el ancho disponible */
+    height: 1080px;
+    margin-top: 50px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Modificado para que ocupe todo el ancho disponible */
+    max-width: 600px; /* Limita el ancho para evitar que el contenido se extienda demasiado */
+    margin-top: 20px; /* Espaciado superior para separar el contenido del reproductor */
+}
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .player img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .player-info {
+        flex-direction: column; /* Cambia la dirección de los elementos en pantallas pequeñas */
+        align-items: flex-start; /* Alinea los elementos al principio en pantallas pequeñas */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+}
