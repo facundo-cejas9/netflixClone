@@ -22,17 +22,14 @@ const signup = async (name, email, password) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
-        console.log("User created with ID: ", user.uid);
         await setDoc(doc(db, 'users', user.uid), {
             uid: user.uid,
             name,
             authProvider: 'local',
             email,
         });
-        console.log("User document created in Firestore");
         toast.success(`Bienvenido ${name}`);
     } catch (error) {
-        console.log("Error during signup: ", error);
         toast.error(error.code.split('/')[1].split('-').join(" "));
     }
 };
@@ -41,7 +38,7 @@ const login = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-        console.log(error);
+        throw new Error(error.code);
         toast.error(error.code.split('/')[1].split('-').join(" "));
     }
 };
@@ -50,7 +47,7 @@ const logOut = async () => {
     try {
         await signOut(auth);
     } catch (error) {
-        console.log(error);
+        throw new Error(error);
     }
 };
 
@@ -58,12 +55,9 @@ const getUsername = async (uid) => {
     try {
         console.log("UID del usuario: ", uid);
         const userDoc = await getDoc(doc(db, 'users', uid));
-        console.log("Document data: ", userDoc.data());
         if (userDoc.exists()) {
-            console.log("User document data: ", userDoc.data());
             return userDoc.data().name;
         } else {
-            console.log('No se encontró el documento del usuario');
             return null;
         }
     } catch (error) {
