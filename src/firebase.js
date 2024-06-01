@@ -22,9 +22,8 @@ const signup = async (name, email, password) => {
     
     try {
 
-
         if (name.trim() === '') {
-            toast.error('Please provide a name')
+            toast.error('Ingresa un nombre de usuario válido.')
             return;
         }
 
@@ -36,8 +35,6 @@ const signup = async (name, email, password) => {
             authProvider: 'local',
             email,
         });
-
-       
         toast.success(`Bienvenido ${name}`);
     } catch (error) {
         toast.error(error.code.split('/')[1].split('-').join(" "));
@@ -62,7 +59,7 @@ const logOut = async () => {
 
 const getUsername = async (uid) => {
     try {
-        console.log("UID del usuario: ", uid);
+
         const userDoc = await getDoc(doc(db, 'users', uid));
         if (userDoc.exists()) {
             return userDoc.data().name;

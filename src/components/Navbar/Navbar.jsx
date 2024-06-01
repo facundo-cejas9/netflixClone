@@ -14,10 +14,8 @@ export const Navbar = () => {
     const fetchUsername = async () => {
       try {
           const user = await getCurrentUser();
-          console.log("Current user: ", user);
           if (user) {
               const name = await getUsername(user.uid);
-              console.log("Username: ", name);
               setUsername(name);
           }
       } catch (error) {

@@ -36,8 +36,9 @@ export default function PlayerPage() {
         );
         const data = await response.json();
         setData(data.results[0]);
-        console.log(data.results[0]);
-      } catch (error) {}
+      } catch (error) {
+        console.log("Error fetching data", error);
+      }
     };
 
     fetchData();

@@ -5,7 +5,7 @@ import { login, signup } from "../../../firebase";
 import netflix_spinner from "../../../assets/netflix_spinner.gif";
 
 export default function LoginPage() {
-  const [signState, setSignState] = useState("Iniciar sesión");
+  const [signState, setSignState] = useState("Crea tu cuenta");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -72,6 +72,7 @@ export default function LoginPage() {
               placeholder="Tu nombre"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              
             />
             <input
               type="email"

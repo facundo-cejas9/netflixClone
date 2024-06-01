@@ -1,11 +1,20 @@
 .hero {
     position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .banner-img {
     width: 100%;
+    max-height: 1000px;
+    object-fit: center;
     mask-image: linear-gradient(to right, transparent, black 75%);
-    -weblit-mask-image: linear-gradient(to right, transparent, black 75%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
+}
+
+.hero-slide {
+    position: relative;
+    height: 100vh;
 }
 
 .hero-caption {
@@ -13,21 +22,21 @@
     width: 100%;
     padding-left: 6%;
     bottom: 0;
-    
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding-bottom: 30px;
 }
 
-.hero-caption p{
+.hero-caption p {
     max-width: 700px;
     font-size: 17px;
     margin: 30px 0px;
 }
 
-
 .hero-btns {
     display: flex;
     gap: 10px;
     margin-bottom: 50px;
-   
 }
 
 .hero-btns .btn img {
@@ -43,12 +52,12 @@
     gap: 10px;
     font-size: 15px;
     font-weight: 600;
-    color: #ffff;
+    color: black;
     border-radius: 4px;
     cursor: pointer;
-    color: black;
-
+    background: white;
 }
+
 .hero-btns .btn.dark-btn {
     color: #ffff;
     background: #6d6d6d;
@@ -57,6 +66,7 @@
 .hero-btns .btn:hover {
     background: #ffffffbf;
 }
+
 .hero-btns .btn.dark-btn:hover {
     background-color: #6d6d6e6e;
 }
@@ -84,6 +94,7 @@
         margin-bottom: 30px;
         width: 40%;
     }
+
     .hero-btns .btn {
         padding: 5px 15px;
         font-size: 12px;
@@ -93,7 +104,6 @@
         display: none;
     }
 }
-
 
 @media (max-width: 400px) {
     .hero-caption {

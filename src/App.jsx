@@ -15,13 +15,10 @@ export const App = () => {
   useEffect(() => {
    onAuthStateChanged(auth, async(user) => {
     if (user) {
-      console.log("logeado");
       navigate('/')
       
     } else {
-      console.log("No logeado");
       navigate('/login')
-      
     }
    })
   }, [])
