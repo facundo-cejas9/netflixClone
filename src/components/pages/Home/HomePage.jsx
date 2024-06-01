@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 import { Navbar } from "../../Navbar/Navbar";
 import "./Home.css";
-import HeroBanner from "../../../assets/hero_banner.jpg";
-import HeroTitle from "../../../assets/hero_title.png";
 import PlayBtn from "../../../assets/play_icon.png";
 import InfoBtn from "../../../assets/info_icon.png";
 import { TitleCards } from "../../TitleCards/TitleCards";
@@ -11,6 +9,7 @@ import { Footer } from "../../Footer/Footer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const [dataMovies, setDataMovies] = useState([]);
@@ -61,10 +60,11 @@ export default function HomePage() {
                   <p>{movie.overview}</p>
                 </div>
                 <div className="hero-btns">
-                  <button className="btn">
+                  <Link className="btn" to={`/player/${movie.id}`}>
                     <img src={PlayBtn} alt="PlayButton" />
                     Play
-                  </button>
+                  </Link>
+
                   <button className="btn dark-btn">
                     <img src={InfoBtn} alt="InfoButton" />
                     Más Info
