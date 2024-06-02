@@ -51,6 +51,7 @@ export default function PlayerPage() {
         src={`https://www.youtube.com/embed/${data.key}`}
         title="trailer"
         allowFullScreen
+        
       ></iframe>
       <div className="player-info">
         <p>{data.name}</p>
@@ -58,5 +59,5 @@ export default function PlayerPage() {
         <p>{data.type}</p>
       </div>
     </div>
-  );
+  )
 }

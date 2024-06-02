@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import MoviesPage from "../../moviesByGenre/MoviesPage";
 
 export default function HomePage() {
   const [dataMovies, setDataMovies] = useState([]);
@@ -79,7 +80,9 @@ export default function HomePage() {
         <TitleCards title={"Now playing"} category={"now_playing"} />
         <TitleCards title={"Pronto en Netflix"} category={"upcoming"} />
         <TitleCards title={"Recomendaciones para ti"} category={"top_rated"} />
+       
       </div>
+      <MoviesPage />
       <Footer />
     </div>
   );

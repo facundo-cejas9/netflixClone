@@ -22,9 +22,10 @@
 .player iframe {
     border-radius: 10px;
     max-width: 100%; /* Asegura que el video no exceda el ancho de su contenedor */
-    width: 90%; /* Hace que el iframe ocupe todo el ancho disponible */
+    width: 100%; /* Hace que el iframe ocupe todo el ancho disponible */
     height: 1080px;
     margin-top: 50px;
+    border: none;
 }
 
 .player-info {

@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CategoryPage from "./components/pages/Categories/CategoryPage";
 
 export const App = () => {
 
@@ -32,6 +33,7 @@ export const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/player/:id" element={<PlayerPage />} />
+        <Route path="/category/:id" element={<CategoryPage />} />
       </Routes>
     </div>
   )

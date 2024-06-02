@@ -1,0 +1,19 @@
+.cards-genres {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, 300px);
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
+}
+
+.movies-genres {
+    display: grid;
+    
+}
+
+.movies-genres img {
+    width: 300px;
+    height: 400px;
+}
