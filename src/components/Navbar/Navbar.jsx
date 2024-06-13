@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import SearchIcon from "../../assets/search_icon.svg";
@@ -9,6 +9,25 @@ import { logOut, getCurrentUser, getUsername } from "../../firebase";
 
 export const Navbar = () => {
   const [username, setUsername] = useState("");
+  
+  const navbarRef = useRef()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 80) {
+        navbarRef.current.classList.add("navbar-black");
+      } else {
+        navbarRef.current.classList.remove("navbar-black");
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); 
 
   useEffect(() => {
     const fetchUsername = async () => {
@@ -27,7 +46,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar">
+    <div ref={navbarRef} className="navbar">
       <div className="navbar-left">
         <a href="/">
           <img src={logo} alt="logo" />
