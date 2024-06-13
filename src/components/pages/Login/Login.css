@@ -22,6 +22,7 @@
     width: 100%;
     max-width: 450px;
     margin: 0;
+    ;
     padding: 40px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -172,6 +173,7 @@
 }
 
 @media (max-width: 480px) {
+    
     .login-logo {
         width: 100px;
         margin: 15px auto;
@@ -179,6 +181,7 @@
 
     .login-form {
         padding: 20px;
+        margin-bottom: 150px;
     }
 
     .login-form h1 {
