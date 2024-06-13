@@ -35,13 +35,13 @@ export default function LoginPage() {
           <form onSubmit={user_auth}>
             <input
               type="email"
-              placeholder="Email o número de celular"
+              placeholder="Ingresa un email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
-              placeholder="Contraseña"
+              placeholder="Ingresa una contraseña"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
